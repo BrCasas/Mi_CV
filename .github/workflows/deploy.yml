@@ -10,5 +10,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Reconstruir y levantar contenedores
         run: |
-          docker compose down --remove-orphans
-          docker compose up -d --build
+          docker compose down --remove-orphans || true
+          # Elimina el contenedor conflictivo si existe
+          docker ps -a --filter "name=cv-frontend" -q | xargs -r docker rm -f
+          docker compose up -d --build --force-recreate
