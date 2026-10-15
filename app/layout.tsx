@@ -1,18 +1,15 @@
-import React from 'react';
-
-export const metadata = {
-  title: 'Mi CV - Brandon Casasola',
-  description: 'Currículum profesional',
-}
+import './globals.css';
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body className="bg-[#0a0a0a] text-zinc-100 antialiased">
+        {children}
+      </body>
     </html>
-  )
+  );
 }
