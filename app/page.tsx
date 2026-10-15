@@ -17,24 +17,26 @@ export default function Home() {
         <aside className="profile-card lg:col-span-4 bg-[#0c1222] border border-blue-900/40 rounded-2xl p-5 sm:p-6 shadow-2xl flex flex-col items-center text-center relative overflow-hidden group hover:border-blue-500/50 transition-all duration-500">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-600 group-hover:scale-105 transition-transform"></div>
           
-          {/* Contenedor de la imagen */}
-          <div className="profile-photo relative w-36 h-36 sm:w-44 sm:h-44 mb-4 rounded-full p-[3px] bg-gradient-to-br from-blue-400 via-cyan-300 to-blue-600 shadow-lg shadow-blue-500/20 flex-shrink-0 transform group-hover:scale-[1.03] transition-transform duration-500">
-            <img 
-              src={profilePicUrl}
-              alt={`Foto de perfil de ${fullName}`}
-              className="w-full h-full object-cover object-[center_30%] rounded-full bg-gray-800"
-              width={601}
-              height={602}
-              fetchPriority="high"
-            />
+          <div className="flex w-full items-center gap-4 text-left">
+            <div className="profile-photo relative h-20 w-20 sm:h-24 sm:w-24 rounded-full p-[3px] bg-gradient-to-br from-blue-400 via-cyan-300 to-blue-600 shadow-lg shadow-blue-500/20 flex-shrink-0 transition-transform duration-500 group-hover:scale-105">
+              <img
+                src={profilePicUrl}
+                alt={`Foto de perfil de ${fullName}`}
+                className="h-full w-full rounded-full bg-gray-800 object-cover object-[center_28%]"
+                width={601}
+                height={602}
+                fetchPriority="high"
+              />
+            </div>
+            <div className="min-w-0">
+              <h1 className="text-lg sm:text-xl font-bold leading-tight tracking-wide text-white">
+                {fullName}
+              </h1>
+              <p className="mt-2 inline-block rounded-full border border-blue-800/50 bg-blue-950/60 px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-blue-400 sm:text-xs">
+                Ingeniería en Sistemas
+              </p>
+            </div>
           </div>
-
-          <h1 className="text-lg sm:text-xl font-bold text-white tracking-wide mt-2">
-            {fullName}
-          </h1>
-          <p className="text-[11px] sm:text-xs font-medium text-blue-400 mt-1 uppercase tracking-widest bg-blue-950/60 px-3 py-1 rounded-full border border-blue-800/50">
-            Ingeniería en Sistemas
-          </p>
 
           <div className="w-full border-t border-blue-900/30 my-5"></div>
 
