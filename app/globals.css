@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes profile-enter {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes photo-drift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.profile-card {
+  animation: profile-enter 700ms cubic-bezier(.2,.8,.2,1) both;
+  box-shadow: 0 24px 70px rgb(0 0 0 / 25%);
+}
+
+.profile-photo {
+  animation: photo-drift 5s ease-in-out 800ms infinite;
+}
+
+.profile-photo img {
+  object-position: center 28%;
+  transition: transform 600ms cubic-bezier(.2,.8,.2,1), filter 600ms ease;
+}
+
+.profile-card:hover .profile-photo img {
+  transform: scale(1.08);
+  filter: saturate(1.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
