@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#070b14] text-gray-200 font-sans p-3 sm:p-6 md:p-8 selection:bg-blue-500 selection:text-white transition-all duration-300">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-start animate-fade-in">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-start">
         
         {/* Columna Izquierda: Perfil y Contacto */}
         <aside className="lg:col-span-4 bg-[#0c1222] border border-blue-900/40 rounded-2xl p-5 sm:p-6 shadow-2xl flex flex-col items-center text-center relative overflow-hidden group hover:border-blue-500/50 transition-all duration-500">
@@ -23,15 +23,7 @@ export default function Home() {
               src={profilePicUrl}
               alt={`Foto de perfil de ${fullName}`}
               className="w-full h-full object-cover rounded-full bg-gray-800"
-              onError={(e) => {
-                // Si la imagen falla en cargar, oculta el img y muestra las iniciales
-                e.currentTarget.style.display = 'none';
-              }}
             />
-            {/* Placeholder de respaldo con iniciales */}
-            <div className="absolute inset-0 flex items-center justify-center bg-gray-800 rounded-full text-blue-300 font-black text-4xl -z-10">
-              {fullName.split(' ').map(n => n[0]).join('').substring(0, 2)}
-            </div>
           </div>
 
           <h1 className="text-lg sm:text-xl font-bold text-white tracking-wide mt-2">
@@ -98,7 +90,7 @@ export default function Home() {
       </div>
 
       {/* Sección inferior: Stack Tecnológico & Competencias */}
-      <section className="max-w-6xl mx-auto mt-8 animate-fade-up">
+      <section className="max-w-6xl mx-auto mt-8">
         <div className="flex items-center gap-2 mb-6">
           <span className="text-blue-400 text-lg">⚙️</span>
           <h3 className="text-base sm:text-lg font-bold text-white tracking-wide">Stack Tecnológico &amp; Competencias</h3>
@@ -126,7 +118,7 @@ export default function Home() {
       </section>
 
       {/* Sección inferior: Trayectoria y Educación */}
-      <div className="max-w-6xl mx-auto mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8 animate-fade-up">
+      <div className="max-w-6xl mx-auto mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
         <section className="bg-[#0c1222] border border-blue-900/40 rounded-2xl p-5 sm:p-6 shadow-xl hover:border-blue-500/50 transition-all duration-300">
           <div className="flex items-center gap-2 mb-4">
             <span className="text-blue-400 text-lg">📂</span>
