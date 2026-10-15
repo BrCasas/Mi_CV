@@ -1,6 +1,6 @@
 services:
   frontend:
-    image: mi_cv-frontend
+    build: .
     container_name: cv-frontend
     restart: always
     ports:
