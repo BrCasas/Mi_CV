@@ -1,10 +1,12 @@
 services:
   frontend:
-    build: .
+    image: mi_cv-frontend
     container_name: cv-frontend
     restart: always
     ports:
       - "80:80"
+    environment:
+      - PORT=80
     networks:
       - red-cv
 
