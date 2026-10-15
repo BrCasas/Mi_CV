@@ -7,11 +7,15 @@ export default function Home() {
         <div className="lg:col-span-4 bg-[#0c1222] border border-blue-900/40 rounded-2xl p-6 shadow-2xl flex flex-col items-center text-center relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-600"></div>
           
-          <div className="relative w-36 h-36 mb-4 rounded-full p-1 bg-gradient-to-b from-blue-500 to-cyan-500 shadow-lg shadow-blue-500/20">
+          <div className="relative w-36 h-36 mb-4 rounded-full p-1 bg-gradient-to-b from-blue-500 to-cyan-500 shadow-lg shadow-blue-500/20 overflow-hidden">
             <img 
               src="/perfil.jpg" 
               alt="Brandon Gustavo Casasola Orellana" 
-              className="w-full h-full object-cover rounded-full"
+              className="w-full h-full object-cover rounded-full bg-slate-800"
+              onError={(e) => {
+                // Fallback si la imagen tarda o no carga
+                e.currentTarget.style.display = 'none';
+              }}
             />
           </div>
 
